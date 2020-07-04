@@ -21,6 +21,7 @@ import {
     MOVE_CONTACT,
     REMOVE_CONTACT,
     SET_CONTACT,
+    RELOAD_ACCOUNTS,
 } from './mutations.type.js';
 import {
     ADD_ACCOUNT,
@@ -306,6 +307,13 @@ export const store = new Vuex.Store({
             }
         },
         /**
+         * @param {Object} _state
+         * @param {[WalletAccount]} _account
+         */
+        [RELOAD_ACCOUNTS](_state, _accounts) {
+            _state.accounts = _accounts;
+        },
+        /**
          * Update account by `_accountData` object. `_accountData` must contain `index` property.
          *
          * @param {Object} _state
@@ -542,6 +550,8 @@ export const store = new Vuex.Store({
                 if (index === _context.state.activeAccountIndex) {
                     _context.commit(DEACTIVATE_ACTIVE_ACCOUNT);
                     activeAccountRemoved = true;
+                } else {
+                    _context.commit(RELOAD_ACCOUNTS, accounts);
                 }
             }
 

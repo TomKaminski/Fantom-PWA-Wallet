@@ -10,6 +10,7 @@ export const APPEND_ACCOUNT = 'appendAccount';
 export const REMOVE_ACTIVE_ACCOUNT = 'removeAccount';
 export const SET_ACCOUNT = 'setAccount';
 export const MOVE_ACCOUNT = 'moveAccount';
+export const RELOAD_ACCOUNTS = 'reloadAccounts';
 export const PUSH_BNBRIDGE_PENDING_REQUEST = 'pushBnbbridgePendingRequests';
 export const SHIFT_BNBRIDGE_PENDING_REQUEST = 'shiftBnbbridgePendingRequests';
 export const APPEND_CONTACT = 'appendContact';
